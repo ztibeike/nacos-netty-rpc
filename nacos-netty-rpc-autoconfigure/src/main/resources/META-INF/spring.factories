@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.zt.rpc.autoconfigure.EnablePropertiesAutoConfiguration,\
+  com.zt.rpc.autoconfigure.RpcAutoConfiguration

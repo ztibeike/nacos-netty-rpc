@@ -1,0 +1,11 @@
+rpc:
+  application:
+    name: test-service
+  server:
+    port: 8888
+  nacos:
+    address: nacos.server
+
+logging:
+  level:
+    com.zt.rpc: debug
