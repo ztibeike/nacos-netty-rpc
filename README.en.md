@@ -2,7 +2,7 @@
 
    An RPC framework based on Nacos, Netty and SpringBoot
 
-   ### 特点
+   ### Features
 
    - Service registry, discovery and load balancing are supported by Nacos
    - Support the heartbeat mechanism to detect TCP connection status
@@ -111,3 +111,8 @@
       
       }
       ```
+
+### Demo
+
+Quick reference：[Gitee](https://gitee.com/zengtao321/nacos-netty-rpc-demo) [GitHub](https://gitee.com/ztibeike/nacos-netty-rpc-demo)
+
