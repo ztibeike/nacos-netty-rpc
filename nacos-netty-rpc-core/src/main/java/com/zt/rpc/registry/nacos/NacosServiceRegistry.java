@@ -23,7 +23,7 @@ public class NacosServiceRegistry extends Nacos implements ServiceRegistry {
         instance.setIp(registerInfo.getIp());
         instance.setPort(registerInfo.getPort());
         Map<String, String> metadata = new HashMap<>();
-        metadata.put("methods", registerInfo.servicesToString());
+        metadata.put("services", registerInfo.servicesToString());
         instance.setMetadata(metadata);
         try {
             this.namingService.registerInstance(serviceName, instance);
