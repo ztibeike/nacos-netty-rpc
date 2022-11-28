@@ -114,5 +114,5 @@
 
 ### Demo
 
-Quick reference：[Gitee](https://gitee.com/zengtao321/nacos-netty-rpc-demo) [GitHub](https://gitee.com/ztibeike/nacos-netty-rpc-demo)
+Quick reference：[Gitee](https://gitee.com/zengtao321/nacos-netty-rpc-demo) [GitHub](https://github.com/ztibeike/nacos-netty-rpc-demo)
 

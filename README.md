@@ -113,5 +113,5 @@
 
 ### 示例项目
 
-仓库链接：[Gitee](https://gitee.com/zengtao321/nacos-netty-rpc-demo) [GitHub](https://gitee.com/ztibeike/nacos-netty-rpc-demo)
+仓库链接：[Gitee](https://gitee.com/zengtao321/nacos-netty-rpc-demo) [GitHub](https://github.com/ztibeike/nacos-netty-rpc-demo)
 
