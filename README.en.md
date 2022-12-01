@@ -8,7 +8,7 @@
    - Support the heartbeat mechanism to detect TCP connection status
    - Support different serialization tools, default is ProtoStuff
    - Provide extension interfaces to the service registry and serialization tool
-   - Support remote service invocations similar to OpenFeign's FeignClient interface
+   - Support declarative invocations similar to OpenFeign's FeignClient interface
 
    ### How to use
 

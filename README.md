@@ -8,7 +8,7 @@
 - 支持心跳机制检测TCP连接状态
 - 支持不同的序列化工具，默认为ProtoStuff
 - 提供注册中心和序列化工具的扩展接口
-- 支持类似于OpenFeign的FeignClient接口方式的远程服务调用
+- 支持类似于OpenFeign的FeignClient接口方式的声明式调用
 
 ### 使用方式
 
