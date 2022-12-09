@@ -9,4 +9,8 @@ public class HelloService {
         return "hello";
     }
 
+    public String helloWithName(String name) {
+        return "Hello " + name + "!";
+    }
+
 }

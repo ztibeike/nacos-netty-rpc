@@ -14,6 +14,7 @@ public class RpcClientTest {
     @Test
     public void test() {
         System.out.println(helloService.hello());
+        System.out.println(helloService.helloWithName("ZT"));
     }
 
 }

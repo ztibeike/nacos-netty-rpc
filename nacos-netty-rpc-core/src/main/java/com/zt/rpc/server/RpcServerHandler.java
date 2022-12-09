@@ -1,5 +1,6 @@
 package com.zt.rpc.server;
 
+import cn.hutool.core.util.ArrayUtil;
 import com.zt.rpc.dto.IdleBeat;
 import com.zt.rpc.dto.RpcRequest;
 import com.zt.rpc.dto.RpcResponse;
@@ -57,7 +58,7 @@ public class RpcServerHandler extends SimpleChannelInboundHandler<RpcRequest> {
         }
         Class<?>[] parameterTypes = request.getParameterTypes();
         Object[] parameters = request.getParameters();
-        if (parameterTypes.length != parameters.length) {
+        if (ArrayUtil.length(parameterTypes) != ArrayUtil.length(parameters)) {
             log.error("Inconsistency in numbers of parameters and parameterTypes of request: {}", requestId);
             return null;
         }
