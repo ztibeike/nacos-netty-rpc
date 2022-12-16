@@ -23,6 +23,8 @@ public class RpcClientFuture implements Future<Object> {
 
     private RpcSync sync;
 
+    private RpcClientCallBack callBack;
+
     public RpcClientFuture(RpcRequest request) {
         this.request = request;
         this.sync = new RpcSync();
@@ -30,6 +32,7 @@ public class RpcClientFuture implements Future<Object> {
 
     public void done(RpcResponse response) {
         this.response = response;
+        invokeCallBackSuccess(response);
         this.sync.release(1);
     }
 
@@ -61,6 +64,35 @@ public class RpcClientFuture implements Future<Object> {
             throw new RuntimeException("Request timeout");
         }
         return this.response == null ? null : response.getResult();
+    }
+
+    public Object sync() {
+        return this.get();
+    }
+
+    public Object sync(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException  {
+        return this.get(timeout, unit);
+    }
+
+    public RpcClientFuture async() {
+        return this;
+    }
+
+    public RpcClientFuture async(RpcClientCallBack callBack) {
+        this.callBack = callBack;
+        return this;
+    }
+
+    private void invokeCallBackSuccess(RpcResponse response) {
+        if (this.callBack != null) {
+            this.callBack.success(response);
+        }
+    }
+
+    private void invokeCallBackError(Throwable e) {
+        if (this.callBack != null) {
+            this.callBack.error(e);
+        }
     }
 
     static class RpcSync extends AbstractQueuedSynchronizer {

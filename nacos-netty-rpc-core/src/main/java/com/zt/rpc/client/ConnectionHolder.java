@@ -33,7 +33,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.locks.ReentrantLock;
 
 @Slf4j
 public class ConnectionHolder {
@@ -41,8 +40,6 @@ public class ConnectionHolder {
     private final Map<String, RpcClientHandler> handlerMap;
 
     private final Map<String, EventListener> listenerMap;
-
-    private static final ReentrantLock lock = new ReentrantLock();
 
     private static volatile ConnectionHolder instance = null;
 
@@ -62,11 +59,11 @@ public class ConnectionHolder {
 
     public static ConnectionHolder getInstance() {
         if (instance == null) {
-            lock.lock();
-            if (instance == null) {
-                instance = new ConnectionHolder();
+            synchronized (ConnectionHolder.class) {
+                if (instance == null) {
+                    instance = new ConnectionHolder();
+                }
             }
-            lock.unlock();
         }
         return instance;
     }
